@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e9eef9">
+  <meta name="description" content="پورتفولیوی زهره شیرولیان؛ کارشناس تولید محتوا و سئو | پژوهشگر آکادمیک. رزومه، مطالب تبدکس و راه‌های ارتباطی.">
+  <title>Zohreh Shirvalian | زهره شیرولیان</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: light; --ink: #232635; --muted: #747b89; --border: #e7e8ef; --accent: #6050dc; --accent-light: #f2efff; }
+    * { box-sizing: border-box; }
+    button, input, textarea, select { font-family: inherit; }
+    html { min-height: 100%; }
+    body {
+      margin: 0; min-height: 100vh; min-height: 100svh;
+      font-family: "Vazirmatn", Tahoma, "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: radial-gradient(ellipse at 12% 12%, #cad9f5 0%, transparent 49%), radial-gradient(ellipse at 94% 86%, #d6cdf7 0%, transparent 49%), #e8edf5;
+      display: grid; place-items: center; padding: 28px 16px;
+    }
+    .portfolio {
+      width: min(100%, 645px); background: rgba(255,255,255,.87);
+      border: 1px solid rgba(255,255,255,.85); border-radius: 26px;
+      box-shadow: 0 22px 52px rgba(45,57,112,.13), 0 2px 10px rgba(45,57,112,.04);
+      padding: 26px 27px 19px; backdrop-filter: blur(12px); position: relative;
+    }
+    /* Right side stays fixed when the page switches between RTL and LTR. */
+    .lang-switch {
+      display: flex; direction: ltr; gap: 3px; position: absolute;
+      right: 19px; left: auto; top: 17px; z-index: 2;
+      padding: 4px; background: #f6f5fa; border: 1px solid #e7e6ef; border-radius: 24px;
+    }
+    .lang-switch button {
+      font-family: inherit; border: 0; border-radius: 100px;
+      background: transparent; color: #6c7280; cursor: pointer;
+      padding: 6px 9px; font-size: 11.5px; min-width: 31px;
+      font-weight: 800; transition: .2s ease;
+    }
+    .lang-switch button[aria-pressed="true"] { background: var(--accent); color: white; box-shadow: 0 3px 8px #6050dc33; }
+    .avatar-wrap {
+      display: grid; place-items: center; margin: 9px auto 15px;
+      width: 99px; height: 99px; border-radius: 50%; border: 3px solid var(--accent);
+      padding: 4px; background: white;
+    }
+    .avatar {
+      width: 100%; height: 100%; border-radius: 50%; overflow: hidden;
+      display: grid; place-items: center; background: linear-gradient(140deg, #7568e6, #d4c9fa);
+      color: white; font-size: 30px; font-weight: 800; letter-spacing: 2px; position: relative;
+    }
+    .avatar img { position: absolute; width: 100%; height: 100%; object-fit: cover; display: none; }
+    h1 { text-align: center; margin: 0 0 7px; line-height: 1.35; font-size: clamp(24px, 4.3vw, 30px); letter-spacing: -.4px; }
+    .role { text-align: center; margin: 0; color: #596072; font-size: 14.2px; line-height: 1.8; }
+    .tagline { text-align: center; margin: 6px 0 24px; color: #8a8d9b; font-size: 12.8px; line-height: 1.75; }
+    .links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 11px; }
+    .link-card {
+      min-height: 50px; border: 1px solid var(--border);
+      background: rgba(255,255,255,.65); border-radius: 15px;
+      padding: 9px 14px; display: flex; align-items: center; gap: 10px;
+      color: var(--ink); text-decoration: none; font-size: 14px; font-weight: 600; line-height: 1.5;
+      transition: background .2s, border-color .2s, transform .2s, box-shadow .2s;
+    }
+    .link-card:not(.is-pending):hover { background: white; border-color: #cdc8f4; box-shadow: 0 5px 16px rgba(63,55,140,.08); transform: translateY(-2px); }
+    .link-card:focus-visible, .lang-switch button:focus-visible { outline: 3px solid #b0a7fe; outline-offset: 2px; }
+    .link-card svg { width: 21px; height: 21px; flex: 0 0 21px; stroke: currentColor; stroke-width: 1.9; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .link-card span { flex: 1; min-width: 0; }
+    .link-card svg.bale-logo { stroke: none; stroke-width: 0; }
+    .link-card.is-pending { opacity: .62; cursor: not-allowed; }
+    .link-card.is-pending:hover { background: rgba(255,255,255,.65); }
+    .email { color: #4165ed; }.linkedin { color: #0a66c2; }.telegram { color: #28a5d8; }.twitter { color: #212121; }.tabdex { color: #138b68; }.professional { color: #e27c36; }.academic { color: #7b57c4; }
+    .divider { height: 1px; background: #e4e4ed; margin-top: 19px; }
+    footer { text-align: center; font-size: 11.4px; color: #898d99; padding-top: 14px; }
+    footer .heart { color: #eb5b6b; }
+
+    /* Mobile: readable full-width links in one vertical column. */
+    @media (max-width: 540px) {
+      body { display: block; padding: 12px 11px 18px; }
+      .portfolio { margin-inline: auto; border-radius: 22px; padding: 23px 15px 15px; }
+      .lang-switch { top: 12px; right: 13px; left: auto; padding: 3px; gap: 3px; }
+      .lang-switch button { min-width: 30px; padding: 5px 7px; font-size: 11px; }
+      .avatar-wrap { width: 91px; height: 91px; margin: 7px auto 13px; border-width: 2px; padding: 3px; }
+      .avatar { font-size: 27px; }
+      h1 { font-size: clamp(24px, 6vw, 27px); margin-bottom: 6px; }
+      .role { font-size: clamp(13px, 3.6vw, 14px); line-height: 1.7; }
+      .tagline { font-size: clamp(12px, 3.3vw, 13px); line-height: 1.65; margin: 5px 0 17px; }
+      .links { grid-template-columns: minmax(0, 1fr); gap: 9px; }
+      .link-card { min-height: 48px; border-radius: 13px; padding: 9px 14px; gap: 11px; font-size: 14px; line-height: 1.5; }
+      .link-card svg { width: 20px; height: 20px; flex: 0 0 20px; }
+      .divider { margin-top: 16px; }
+      footer { font-size: 11px; padding-top: 11px; }
+    }
+    /* Narrow phones keep the same one-column layout and readable touch targets. */
+    @media (max-width: 350px) {
+      body { padding: 8px; }
+      .portfolio { padding: 22px 11px 14px; }
+      .avatar-wrap { width: 87px; height: 87px; }
+      .role { font-size: 12.7px; }
+      .tagline { font-size: 11.9px; }
+      .links { gap: 8px; }
+      .link-card { padding: 9px 12px; gap: 9px; font-size: 13.5px; }
+      .link-card svg { width: 19px; height: 19px; flex: 0 0 19px; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <!-- راهنمای تغییر لینک‌ها: در بخش تنظیمات SCRIPT پایین فایل، نشانی‌ها را وارد کنید. -->
+  <main class="portfolio">
+    <div class="lang-switch" role="group" aria-label="Language / زبان">
+      <button type="button" id="fa-btn" lang="fa" aria-pressed="true">فا</button>
+      <button type="button" id="en-btn" lang="en" aria-pressed="false">EN</button>
+    </div>
+    <div class="avatar-wrap" aria-label="Profile image">
+      <div class="avatar"><span>ZS</span><img id="profile-image" src="profile.jpg" alt="Zohreh Shirvalian"></div>
+    </div>
+    <h1 data-i18n="name">زهره شیرولیان</h1>
+    <p class="role" data-i18n="role">کارشناس تولید محتوا و سئو | پژوهشگر آکادمیک</p>
+    <p class="tagline" data-i18n="tagline">قدری علاقه‌مند به تاریخ، فلسفه، ریسرچ، تکنولوژی و اقتصاد</p>
+
+    <section class="links" aria-label="ارتباط و رزومه">
+      <a class="link-card" data-link="email"><svg class="email" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span data-i18n="email">ایمیل</span></a>
+      <a class="link-card" data-link="linkedin"><svg class="linkedin" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.1M12 17v-7h3c2 0 2 2 2 3v4"/></svg><span data-i18n="linkedin">لینکدین</span></a>
+      <a class="link-card" data-link="telegram"><svg class="telegram" viewBox="0 0 24 24" aria-hidden="true"><path d="m21 4-3.2 15.7-5.4-4.2-3 3.1.3-5.2L20 5.2 7.3 12.7 3 11z"/></svg><span data-i18n="telegram">کانال تلگرام</span></a>
+      <a class="link-card" data-link="bale"><svg class="bale-logo" viewBox="0 0 1000 999.72" aria-hidden="true"><defs><linearGradient id="bale-gradient" x1="800.4" y1="93.39" x2="93.57" y2="800.23" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4cebb4"/><stop offset="1" stop-color="#2e2e74"/></linearGradient></defs><path d="M1010.36,547.36c-.73,17.77-2.6,36-6.85,53.41-1.54,16.48-6.36,32.54-10.76,48.52-5.14,19.5-12.48,38.33-19.9,57.17-6.77,15.66-14.35,30.91-22.26,46.08C942.92,766,934.93,779.2,926.29,792q-14.32,21-30.5,40.45c-11.18,13.13-22.68,26.09-35.15,37.92a503.68,503.68,0,0,1-51.3,43.55,453.44,453.44,0,0,1-48.44,31.56C742.06,956.74,722.16,966,702,974.6a548,548,0,0,1-65.89,21.86c-19.49,4.32-39,9.21-58.88,10.76-37,5.71-74.86,5.79-112.13,2.2-33.6-2.61-66.87-9.78-99.25-19.32l-.08-.58C210.19,944.18,82.32,816.07,34.94,661.2c-10.36-33.35-17.62-67.93-20.31-102.83-3.83-33.85-2-68-2.2-102q-.37-40.74-.08-81.64-.26-41.83,0-83.83c-.17-24-.08-47.95-.08-71.93s-.17-48.19.16-72.25c-.33-23.82-.08-47.63-.16-71.44-1.64-17.94,4.24-36.7,17.86-48.85C44.48,13.44,65.68,8.55,84,14.91c11.09,3.75,20.71,10.6,30.58,16.72,36,23.4,70.54,48.85,104.71,74.78a86.74,86.74,0,0,0,10.68-6.77A426.86,426.86,0,0,1,272.58,73.3a483.59,483.59,0,0,1,45.75-22.1c16.39-6.85,33.19-12.8,50.15-18.1,18.1-5,36.29-10.11,55-12.72a392.65,392.65,0,0,1,61.82-7.26,451.46,451.46,0,0,1,76.41,1.71A413.36,413.36,0,0,1,619,24c128.53,27,244.08,108.3,314.46,219a493,493,0,0,1,66.47,159.76c4.73,20.95,8.48,42.32,9.7,63.77A411.89,411.89,0,0,1,1010.36,547.36Z" transform="translate(-12 -12.14)" fill="url(#bale-gradient)"/><path d="M705.69,273.2a107.59,107.59,0,0,1,62.37,1.3c25.62,9.82,46.29,29.94,57.5,54.9,8.34,22.86,9.31,48.42.91,71.44-6.06,16.2-16.76,30.09-29.4,41.74q-16.7,16.49-33.21,33.14c-11.79,11.79-23.64,23.5-35.33,35.35-11.3,11.28-22.62,22.49-33.85,33.81-12.32,12.34-24.68,24.61-36.95,37-14,14-28.06,27.94-42,42-13.24,13.29-26.55,26.49-39.8,39.78s-26.77,26.71-40.1,40.11c-12.27,11.85-23.51,24.94-37.35,35.06a106.69,106.69,0,0,1-57.95,16C417,753.28,393.79,744,376.87,727.33q-78.53-78.44-157-156.94c-12.82-12.66-21.38-29.07-26-46.38-4.75-23.86-1.94-49.51,10.31-70.75,9.37-16.54,23.79-29.65,40.19-39a107.52,107.52,0,0,1,57.86-9.73c21.38,3.21,42,13,56.91,28.76Q401.7,476,444.37,518.5c8.63-8.18,16.9-16.73,25.19-25.27q18-17.31,35.24-35.35c11.36-10.68,22.33-21.82,33.07-33.12,7.74-6.88,14.75-14.51,22.07-21.8,12-11.68,23.75-23.59,35.49-35.51,11.21-10.83,22.11-21.95,33.07-33,11.79-11.5,23.28-23.28,35-34.87a105.75,105.75,0,0,1,42.21-26.37Z" transform="translate(-12 -12.14)" fill="#fff"/></svg><span data-i18n="bale">کانال بله</span></a>
+      <a class="link-card" data-link="x"><svg class="twitter" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h4l12 18h-4L4 3zM20 3 4 21"/></svg><span data-i18n="x">ایکس (توییتر)</span></a>
+      <a class="link-card" data-link="tabdex"><svg class="tabdex" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 10h16M4 15h11M4 20h7"/></svg><span data-i18n="tabdex">مطالب من در تبدکس</span></a>
+      <a class="link-card" data-link="professionalCv" data-file="true"><svg class="professional" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 13h6M9 17h6"/></svg><span data-i18n="professionalCv">دانلود رزومه کاری</span></a>
+      <a class="link-card" data-link="academicCv" data-file="true"><svg class="academic" viewBox="0 0 24 24" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5-10-5zM6 12v5c3 3 9 3 12 0v-5M22 9v7"/></svg><span data-i18n="academicCv">دانلود رزومه آکادمیک</span></a>
+    </section>
+    <div class="divider"></div>
+    <footer><span data-i18n="footer">ساخته‌شده با</span> <span class="heart">♥</span></footer>
+  </main>
+  <script>
+    // لینک‌های ارتباطی وارد شده‌اند؛ مسیر فایل‌های رزومه پس از آپلود PDF فعال می‌شود.
+    const LINKS = {
+      email: "mailto:z.sh.valian@gmail.com",             // مثال: mailto:you@example.com
+      linkedin: "https://www.linkedin.com/in/zohreh-shirvalian",          // مثال: https://www.linkedin.com/in/your-name/
+      telegram: "https://t.me/zohi_talk",          // مثال: https://t.me/yourchannel
+      bale: "https://ble.ir/zohi_talk",              // لینک کانال در بله: https://ble.ir/yourchannel
+      x: "https://x.com/zohreh_valian",                 // مثال: https://x.com/yourusername
+      tabdex: "https://tabdex.ir/mag/author/zohrehshirvalian/",            // لینک صفحه نویسنده شما در تبدکس
+      professionalCv: "resume-professional.pdf", // این PDF را در پوشه اصلی مخزن آپلود کنید
+      academicCv: "academic-cv.pdf"              // این PDF را در پوشه اصلی مخزن آپلود کنید
+    };
+    const translations = {
+      fa: {
+        name: "زهره شیرولیان", role: "کارشناس تولید محتوا و سئو | پژوهشگر آکادمیک",
+        tagline: "قدری علاقه‌مند به تاریخ، فلسفه، ریسرچ، تکنولوژی و اقتصاد",
+        email: "ایمیل", linkedin: "لینکدین", telegram: "کانال تلگرام", bale: "کانال بله", x: "ایکس (توییتر)",
+        tabdex: "مطالب من در تبدکس",
+        professionalCv: "دانلود رزومه کاری", academicCv: "دانلود رزومه آکادمیک",
+        footer: "ساخته‌شده با", pending: "لینک هنوز اضافه نشده است", missingFile: "فایل رزومه هنوز بارگذاری نشده است"
+      },
+      en: {
+        name: "Zohreh Shirvalian", role: "Content & SEO Specialist | Academic Researcher",
+        tagline: "Interested in history, philosophy, research, technology, and economics",
+        email: "Email", linkedin: "LinkedIn", telegram: "Telegram Channel", bale: "Bale Channel", x: "X (Twitter)",
+        tabdex: "My Work on Tabdex",
+        professionalCv: "Download Professional CV", academicCv: "Download Academic CV",
+        footer: "Made with", pending: "Link not added yet", missingFile: "CV file not uploaded yet"
+      }
+    };
+    let lang = "fa";
+    const availability = {};
+    function activateLink(node, url, isDownload) {
+      node.href = url;
+      node.classList.remove("is-pending");
+      node.removeAttribute("aria-disabled");
+      node.removeAttribute("title");
+      if (isDownload) node.setAttribute("download", "");
+      else { node.removeAttribute("download"); if (!url.startsWith("mailto:")) { node.target = "_blank"; node.rel = "noopener noreferrer"; } }
+    }
+    function deactivateLink(node, why) {
+      node.removeAttribute("href"); node.removeAttribute("target"); node.removeAttribute("download");
+      node.classList.add("is-pending"); node.setAttribute("aria-disabled", "true"); node.title = why;
+    }
+    function render() {
+      const t = translations[lang];
+      document.documentElement.lang = lang; document.documentElement.dir = lang === "fa" ? "rtl" : "ltr";
+      document.title = "Zohreh Shirvalian | " + t.name;
+      document.querySelectorAll("[data-i18n]").forEach(el => { el.textContent = t[el.dataset.i18n]; });
+      document.getElementById("fa-btn").setAttribute("aria-pressed", String(lang === "fa"));
+      document.getElementById("en-btn").setAttribute("aria-pressed", String(lang === "en"));
+      document.querySelectorAll("[data-link]").forEach(el => {
+        const key = el.dataset.link, url = LINKS[key], file = el.dataset.file === "true";
+        if (!url || (file && availability[key] !== true)) deactivateLink(el, file ? t.missingFile : t.pending);
+        else activateLink(el, url, file);
+      });
+    }
+    document.getElementById("fa-btn").addEventListener("click", () => { lang = "fa"; render(); });
+    document.getElementById("en-btn").addEventListener("click", () => { lang = "en"; render(); });
+    const photo = document.getElementById("profile-image");
+    photo.addEventListener("load", () => { photo.style.display = "block"; });
+    photo.addEventListener("error", () => { photo.style.display = "none"; });
+    // رزومه فقط زمانی فعال می‌شود که PDF واقعاً روی سایت موجود باشد.
+    async function checkResumes() {
+      await Promise.all(["professionalCv", "academicCv"].map(async key => {
+        try { const response = await fetch(LINKS[key], { method: "HEAD", cache: "no-store" }); availability[key] = response.ok && (response.headers.get("content-type") || "").toLowerCase().includes("pdf"); }
+        catch { availability[key] = false; }
+      }));
+      render();
+    }
+    render(); checkResumes();
+  </script>
+</body>
+</html>
